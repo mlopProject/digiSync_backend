@@ -2,9 +2,18 @@ pipeline {
     agent any
 
     stages {
+       stage('delete Existing clone') {
+            steps {
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    bat '''rd /q /s .'''
+                }
+            }
+        }
+         
+         
         stage('Clone repository') {
             steps {
-                git credentialsId: 'dhub_iftikhar', url: 'https://github.com/mlopProject/digiSync_backend'
+                bat '''git clone https://github.com/mlopProject/digiSync_backend.git .'''
             }
         }
         
