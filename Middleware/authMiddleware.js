@@ -1,6 +1,6 @@
 const userModel= require('../Models/userModel');
 const errorHandler= require('../Utils/errorHandler');
-const {verifyJWT}= require('../utils/token');
+const {verifyJWT}= require('../Utils/token');
 
 const auth= (...roles)=>{
     return async(req,res,next)=>{
