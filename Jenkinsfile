@@ -5,7 +5,7 @@ pipeline {
        stage('delete Existing clone') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    bat '''rd /q /s .'''
+                    sh '''rm -r -f *'''
                 }
             }
         }
@@ -13,7 +13,7 @@ pipeline {
          
         stage('Clone repository') {
             steps {
-                bat '''git clone https://github.com/mlopProject/digiSync_backend.git .'''
+                sh '''git clone https://github.com/mlopProject/digiSync_backend.git .'''
             }
         }
         
