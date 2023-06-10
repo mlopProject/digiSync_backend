@@ -13,7 +13,7 @@ pipeline {
          
         stage('Clone repository') {
             steps {
-                sh '''git clone https://github.com/mlopProject/digiSync_backend.git ..'''
+                 git credentialsId: '', url: ' https://github.com/mlopProject/digiSync_backend.git'
             }
         }
         
