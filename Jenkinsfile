@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone repository') {
             steps {
-                git credentialsId: 'cred_github', url: 'https://github.com/mlopProject/digiSync_backend'
+                git credentialsId: 'dhub_iftikhar', url: 'https://github.com/mlopProject/digiSync_backend'
             }
         }
         
