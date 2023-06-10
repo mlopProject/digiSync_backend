@@ -47,10 +47,10 @@ pipeline {
                         string(credentialsId: 'EMAIL_USER', variable: 'EMAIL_USER'),
                         string(credentialsId: 'EMAIL_AUTH', variable: 'EMAIL_AUTH')
                     ]) {
-                        sh 'docker stop weather-app || true'
-                        sh 'docker rm weather-app || true'
+                        sh 'docker stop digi-backend-app || true'
+                        sh 'docker rm digi-backend-app || true'
                         sh '''
-                            docker run -d --name weather-app -p 4000:4000 \
+                            docker run -d --name digi-backend-app -p 4000:4000 \
                             -e MONGO_URL=${MONGO_URL} \
                             -e JWT_SECRET=${JWT_SECRET} \
                             -e PORT=${PORT} \
