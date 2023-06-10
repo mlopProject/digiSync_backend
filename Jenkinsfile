@@ -50,7 +50,7 @@ pipeline {
                         sh 'docker stop weather-app || true'
                         sh 'docker rm weather-app || true'
                         sh '''
-                            docker run -d --name weather-app -p 5000:5000 \
+                            docker run -d --name weather-app -p 4000:4000 \
                             -e MONGO_URL=${MONGO_URL} \
                             -e JWT_SECRET=${JWT_SECRET} \
                             -e PORT=${PORT} \
