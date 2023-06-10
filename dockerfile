@@ -1,4 +1,11 @@
-FROM node
-COPY . .
+FROM node:18
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
 RUN npm install
-CMD [ "node", "server.js"]
+
+COPY . .
+
+CMD [ "node", "server.js" ]
