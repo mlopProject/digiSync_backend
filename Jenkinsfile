@@ -5,7 +5,7 @@ pipeline {
        stage('delete Existing clone') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    sh '''rm -r -f *'''
+                    sh '''rm -r -f .'''
                 }
             }
         }
