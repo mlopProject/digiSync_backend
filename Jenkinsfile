@@ -12,7 +12,7 @@ pipeline {
         
         stage('Clone repository') {
             steps {
-                sh '''git clone https://github.com/mlopProject/digiSync_backend .'''
+                sh '''git clone https://github.com/mlopProject/digiSync_backend.git .'''
             }
         }
         
