@@ -9,11 +9,10 @@ pipeline {
                 }
             }
         }
-         
-         
+        
         stage('Clone repository') {
             steps {
-                 git credentialsId: '', url: ' https://github.com/mlopProject/digiSync_backend.git'
+                bat '''git clone https://github.com/mlopProject/digiSync_backend .'''
             }
         }
         
